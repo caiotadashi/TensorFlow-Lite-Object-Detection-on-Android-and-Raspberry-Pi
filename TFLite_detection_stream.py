@@ -170,12 +170,18 @@ while True:
 
     # Start timer (for calculating frame rate)
     t1 = cv2.getTickCount()
+    if t1:
+        print('Timer started')
 
     # Grab frame from video stream
     frame1 = videostream.read()
+    if frame1:
+        print('Frame grabbed')
 
     # Acquire frame and resize to expected shape [1xHxWx3]
     frame = frame1.copy()
+    if frame:
+        print('Frame copied')
     frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     frame_resized = cv2.resize(frame_rgb, (width, height))
     input_data = np.expand_dims(frame_resized, axis=0)
