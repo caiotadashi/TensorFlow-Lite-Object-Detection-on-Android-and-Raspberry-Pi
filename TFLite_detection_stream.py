@@ -175,8 +175,6 @@ while True:
 
     # Grab frame from video stream
     frame1 = videostream.read()
-    if frame1:
-        print('Frame grabbed')
 
     # Acquire frame and resize to expected shape [1xHxWx3]
     frame = frame1.copy()
